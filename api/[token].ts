@@ -21,7 +21,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
   const botInstance = await bot.factory(config, db)
   const update = req.body
 
-  res.status(204).end()
-
   botInstance.handleUpdate(update)
+  
+  res.status(204).end()
 }
